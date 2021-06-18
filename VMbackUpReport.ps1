@@ -10,11 +10,12 @@ $missingarray =@()
 #variable to create serial No
 $SeriesNo = 0
 
+#looping through list of VMs
 foreach ($VM in $myVM) {
 
 $backup = Get-AzRecoveryServicesBackupStatus -Name $VM.name -ResourceGroupName $VM.ResourceGroupName -Type AzureVM
 
-
+#Building Object of the report
 $seriesNo ++ 
 $myobj = [PSCustomObject]@{
     SNo = $SeriesNo
@@ -24,7 +25,9 @@ $myobj = [PSCustomObject]@{
   
     
 }
-#$myobj
+
+#adding objects to the Array
 $missingarray += $myobj
 }
+#Piping array to the export-csv function to create a CSV file.
 $missingarray | export-csv -path "BackupReport.csv" -NoTypeInformation
