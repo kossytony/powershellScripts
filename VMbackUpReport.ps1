@@ -2,7 +2,7 @@
 #set az context by putting the subscription ID
 Set-AzContext ""
 
-#get all VMs in the 
+#get all VMs in the subscription
 $myVM = Get-azVM 
 
 $missingarray =@()
