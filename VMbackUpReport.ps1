@@ -5,7 +5,9 @@ Set-AzContext ""
 #get all VMs in the subscription
 $myVM = Get-azVM 
 
+#empty array to hold report objects
 $missingarray =@()
+#variable to create serial No
 $SeriesNo = 0
 
 foreach ($VM in $myVM) {
