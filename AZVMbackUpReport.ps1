@@ -1,4 +1,14 @@
 
+
+
+
+
+$subscriptions = Get-AzSubscription
+
+
+
+foreach ( $subscription in $subscriptions ) {
+
 #set az context by putting the subscription ID
 Set-AzContext ""
 
@@ -29,5 +39,6 @@ $myobj = [PSCustomObject]@{
 #adding objects to the Array
 $missingarray += $myobj
 }
+]
 #Piping array to the export-csv function to create a CSV file.
 $missingarray | export-csv -path "BackupReport.csv" -NoTypeInformation
