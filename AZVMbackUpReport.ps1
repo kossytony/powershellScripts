@@ -26,6 +26,7 @@ foreach ( $subscription in $subscriptions ) {
             Name          = $VM.name
             ResourceGroup = $VM.ResourceGroupName
             backupStatus  = $backup.BackedUp
+            Subscription  = $subscription.name
   
     
         }
@@ -35,4 +36,4 @@ foreach ( $subscription in $subscriptions ) {
     }
 }
 #Piping array to the export-csv function to create a CSV file.
-$missingarray | export-csv -path "BackupReport.csv" -NoTypeInformation
+$missingarray | export-csv -path "BackupReportOct.csv" -NoTypeInformation
