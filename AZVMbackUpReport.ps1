@@ -36,4 +36,4 @@ foreach ( $subscription in $subscriptions ) {
     }
 }
 #Piping array to the export-csv function to create a CSV file.
-$missingarray | export-csv -path "BackupReportOct.csv" -NoTypeInformation
+$missingarray | export-csv -path "yourReport.csv" -NoTypeInformation
